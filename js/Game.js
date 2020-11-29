@@ -58,12 +58,9 @@ class Game {
       //x and y position of the cars
       var x = 175;
       var y;
-      var temp_display = [];
-      temp_display = [createElement('h4'), createElement('h4'), createElement('h4'), createElement('h4')];
+      var temp_display = []
 
       for (var plr in allPlayers) {
-        background(rgb(198, 135, 103));
-        image(track, 0, -displayHeight * 4, displayWidth, displayHeight * 5);
         //add 1 to the index for every loop
         index = index + 1;
 
@@ -81,10 +78,10 @@ class Game {
           temp_rank.sort((a, b) => (b.distance - a.distance));
         }
         console.log(temp_rank)
-        //temp_display=[];
-
+        temp_display=[];
+        temp_display = [createElement('h4'), createElement('h4'), createElement('h4'), createElement('h4')];
         temp_display[index - 1].position(displayWidth - 200, index * 20);
-
+        
         temp_display[index - 1].html(temp_rank[index - 1].name + ": " + temp_rank[index - 1].distance);
 
         console.log(temp_rank[index - 1].name + ": " + temp_rank[index - 1].distance + "," + index * 20);
